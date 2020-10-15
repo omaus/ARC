@@ -40,24 +40,24 @@ All programmatic components of an ARC should go here, in the form of workflows.
 `/workflows/<workflow>/code`
 : code for workflow
 
-`/workflows/<workflow>/code/something.r`
+`/workflows/<workflow>/code/something.r`  
 `/workflows/<workflow>/code/generic.cwl`
 
 
 #### Sample ARC workflow in F#
 
-`/workflow/libfubar/code/bla.fs`
-`/workflow/libfubar/code/blu.fs`
-`/workflow/libfubar/code/blo.fs`
-`/workflow/libfubar/generic.cwl`
+`/workflow/libfubar/code/bla.fs`  
+`/workflow/libfubar/code/blu.fs`  
+`/workflow/libfubar/code/blo.fs`  
+`/workflow/libfubar/generic.cwl`  
 `/workflow/libfubar/fubar.packages`
 
 Interactive notebook workflow:
 
 `/results/notebook/test.ipynb`
 
-use case:
-git submodule add /workflows/<foo> git://...
+use case:  
+```git submodule add /workflows/<foo> git://...```
 
 
 ### Results
@@ -67,8 +67,8 @@ Results are all artefacts that result by some computation from the assays.
 `/results/<name>.cwl`
     - do XY plot on assay1 using XYworkflow -> XY.png
     - do PCA on assay1 using PCAworkflow -> PCA.txt
-`/results/<name>/plot1.png`
-`/results/<name>/table.csv`
+`/results/<name>/plot1.png`  
+`/results/<name>/table.csv`  
 `/results/<name>/fubar.txt`
 
 
