@@ -10,6 +10,6 @@
         "ionide.ionide-fake"
     ],
     "mounts": [
-        "source=${localWorkspaceFolder}/../../../,target=/arc,type=bind,consistency=cached"
+        "source=${localWorkspaceFolder}/../../,target=/arc,type=bind,consistency=cached"
       ]
 } 
