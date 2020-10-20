@@ -2,14 +2,23 @@
 
 ## ARC directory structure
 
-`/isa.tab`
+`/isa.investigation.xlsx`
 : main investigation file (in XLSX format), contains top-level information about the investigation and links to assays
 
+`/isa.studies.xlsx`
+: (optional) posibillity to group assays into studies within one investigation, contains mostly sample characteristics 
+
+`/LICENSE` 
+: license file for the arc
+
 `/arc.cwl`
-: executes all results cwls
+: (optional) executes all runs
+
 
 
 ### Assay
+
+All measurment (self generated) datasets are considert as assays (immutable input data)
 
 `/assays/<assay>`
 : folder for an essay, name is arbitrary
@@ -24,58 +33,38 @@
 : per-assay ISA file, contains only info about this assay (in XLSX format)
 
 
-### Workflows
+### Code capsules (aka. workflows)
 
-All programmatic components of an ARC should go here, in the form of workflows.
+All programmatic components of an ARC should go here, in the form of code and envirunment.
 
-`/workflows/`
-: folder for workflow specifications
+`/codecaps/<yourCodeCapsuleName>/`
+: folder for code and its environment (workflow specifications), contains all files needed to specify a workflow. Also packages and other includes needed should go here.
 
-/workflows/Dockerfile
-: top-level Dockerfile [optional] in which all workflows should execute (individual workflows can specify their own Dockerfiles)
+`/codecaps/<yourCodeCapsuleName>/Dockerfile`
+: top-level Dockerfile [optional] in which all code/workflow should execute
 
-`/workflows/<workflow>/`
-: per-workflow folder, contains all files needed to specify a workflow
+`/codecaps/<yourCodeCapsuleName>/[codefiles;...]`
+: code files/scripts for computation
 
-`/workflows/<workflow>/code`
-: code for workflow
+### Externals
 
-`/workflows/<workflow>/code/something.r`
-`/workflows/<workflow>/code/generic.cwl`
+The place for external data (mapping files, gene info, etc.)
 
-
-#### Sample ARC workflow in F#
-
-`/workflow/libfubar/code/bla.fs`
-`/workflow/libfubar/code/blu.fs`
-`/workflow/libfubar/code/blo.fs`
-`/workflow/libfubar/generic.cwl`
-`/workflow/libfubar/fubar.packages`
-
-Interactive notebook workflow:
-
-`/results/notebook/test.ipynb`
-
-use case:
-git submodule add /workflows/<foo> git://...
-
-
-### Results
-
-Results are all artefacts that result by some computation from the assays.
-
-`/results/<name>.cwl`
-    - do XY plot on assay1 using XYworkflow -> XY.png
-    - do PCA on assay1 using PCAworkflow -> PCA.txt
-`/results/<name>/plot1.png`
-`/results/<name>/table.csv`
-`/results/<name>/fubar.txt`
-
-
-### External
-
-`/external/mapman-ontology-301120.txt`
+`/externals/[e.g. mapman-ontology-301120.txt;...]`
 : external reference / knowledge files, hard included
 
-`/external/isa.tab`
+`/externals/isa.tab`
 : description of external reference / knowledge files, XLSX format
+
+### Runs (aka. computations)
+
+Runs are all artefacts that result by some computation from the assays.
+
+`./runs/<yourRunResultName>`
+: folder for results of your run aka. workflow execution
+
+`/runs/<runResultName>/[files;...]`
+: run result files (plots, tables, etc. )
+
+`/runs/<runResultName>.cwl`
+: executes a script or workflow and produces run results accordingly.
