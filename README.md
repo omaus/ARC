@@ -60,7 +60,7 @@ The place for external data (mapping files, gene info, etc.)
 
 Runs are all artefacts that result by some computation from the assays.
 
-`./runs/<yourRunResultName>`
+`/runs/<yourRunResultName>`
 : folder for results of your run aka. workflow execution
 
 `/runs/<runResultName>/[files;...]`
