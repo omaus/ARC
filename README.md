@@ -33,7 +33,7 @@ All measurment (self generated) datasets are considert as assays (immutable inpu
 : per-assay ISA file, contains only info about this assay (in XLSX format)
 
 
-### workflows (aka. workflows, codespace, code, code capsules, codecaps)
+### workflows (aka. codespace, code, code capsules, codecaps)
 
 All programmatic components of an ARC should go here, in the form of code and environment.
 
