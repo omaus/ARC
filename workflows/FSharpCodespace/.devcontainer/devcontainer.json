@@ -1,0 +1,15 @@
+{
+    "name": "FSharpCodespace",
+    "dockerFile": "../Dockerfile",
+    "appPort": [8080],
+    "extensions": [
+        "ionide.ionide-fsharp",
+        "ms-vscode.csharp",
+        "editorconfig.editorconfig",        
+        "ionide.ionide-paket",
+        "ionide.ionide-fake"
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder}/../../,target=/arc,type=bind,consistency=cached"
+      ]
+} 

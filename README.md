@@ -33,17 +33,17 @@ All measurment (self generated) datasets are considert as assays (immutable inpu
 : per-assay ISA file, contains only info about this assay (in XLSX format)
 
 
-### Code capsules (aka. workflows)
+### workflows (aka. codespace, code, code capsules, codecaps)
 
-All programmatic components of an ARC should go here, in the form of code and envirunment.
+All programmatic components of an ARC should go here, in the form of code and environment.
 
-`/codecaps/<yourCodeCapsuleName>/`
+`/workflows/<yourWorkflowsName>/`
 : folder for code and its environment (workflow specifications), contains all files needed to specify a workflow. Also packages and other includes needed should go here.
 
-`/codecaps/<yourCodeCapsuleName>/Dockerfile`
+`/workflows/<yourWorkflowsName>/Dockerfile`
 : top-level Dockerfile [optional] in which all code/workflow should execute
 
-`/codecaps/<yourCodeCapsuleName>/[codefiles;...]`
+`//workflows/<yourWorkflowsName>//[codefiles;...]`
 : code files/scripts for computation
 
 ### Externals
@@ -60,7 +60,7 @@ The place for external data (mapping files, gene info, etc.)
 
 Runs are all artefacts that result by some computation from the assays.
 
-`./runs/<yourRunResultName>`
+`/runs/<yourRunResultName>`
 : folder for results of your run aka. workflow execution
 
 `/runs/<runResultName>/[files;...]`
